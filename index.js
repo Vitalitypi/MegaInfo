@@ -6,7 +6,7 @@ const app = express()
 app.use(express.json())
 
 app.all('/', async (req, res) => {
-  console.log('消息推送', req.body)
+  // console.log('消息推送', req.body)
   // 从header中取appid，如果from-appid不存在，则不是资源复用场景，可以直接传空字符串，使用环境所属账号发起云调用
   const appid = req.headers['x-wx-from-appid'] || ''
   const { ToUserName, FromUserName, MsgType, Content, CreateTime } = req.body
